@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banking</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body>
+    <header style="text-align: center;">
+        <h1>Lets get some <span>mooooooonny</span>!!!</h1>
+    </header>
+    <main>
+        <section>
+            <div style="display: flex;">
+                <div style="margin: 20px; border: 2px green  solid; padding: 0px 50px ;">
+                    <h3>Deposits</h3>
+                    <h4>$ <span id="deposit-Total">00</span></h4>
+                </div>
+                <div style="margin: 20px; border: 2px green  solid; padding: 0px 50px ;">
+                    <h3>Widthdrow</h3>
+                    <h4>$<span id="widthdrow-Total">00</span></h4>
+                </div>
+                <div style="margin: 20px; border: 2px green  solid; padding: 0px 50px ;">
+                    <h3> Balance</h3>
+                    <h4>$<span id="balance-total">1000</span></h4>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div style="display: flex; ">
+                <div style="text-align: center; margin: 20px; border: 2px green  solid; padding: 5px 50px ;">
+                    <h3>Deposit</h3>
+                    <input id="deposit-Input" type="number" placeholder="enter Your Deposit ammaunt..."><br> <br>
+
+                    <button id="depositButtton">Submit</button>
+                </div>
+                <div style="text-align: center; margin: 20px; border: 2px green  solid; padding: 5px 50px ;">
+                    <h3>Widthdrow</h3>
+                    <input id="widthdrow-Input" type="number" placeholder="enter Your Widthdrow ammaunt..."> <br> <br>
+
+                    <button id="widthdrowtBtn">Submit</button>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script>
+
+
+        depositButtton.addEventListener('click', function () {
+
+            const depositInput = document.getElementById('deposit-Input')
+
+            const depositAmountText = depositInput.value;
+            const depositAmount = parseFloat(depositAmountText)
+
+            // get current deposite
+
+            const depositTotal = document.getElementById("deposit-Total")
+                ;
+            const depositTotalText = depositTotal.innerText;
+            const previousDepositTotal = parseFloat(depositTotalText)
+
+            depositTotal.innerText = previousDepositTotal + depositAmount;
+
+            console.log(depositTotalText);
+            //update Balence
+
+            const balanceTotal = document.getElementById('balance-total')
+                ;
+            const balanceTotalText = balanceTotal.innerText;
+            const previousBalenceTotal = parseFloat(balanceTotalText);
+            balanceTotal.innerText = previousBalenceTotal + depositAmount;
+
+            //clear input field
+
+            depositInput.value = ''
+
+        })
+
+
+        //  handle widthdrow button
+
+        widthdrowtBtn.addEventListener('click', function () {
+            const widthdrowInput = document.getElementById('widthdrow-Input');
+            const widthdrowAmountText = widthdrowInput.value;
+            console.log(widthdrowAmountText)
+
+
+            // update widthdrow total
+
+            document.getElementById('wid')
+        })
+
+
+    </script>
+
+</body>
+
+
+</html>
